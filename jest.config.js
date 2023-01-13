@@ -1,8 +1,7 @@
 module.exports = {
   bail: true,
   collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.ts"],
-  coverageReporters: ["html", "text-summary"],
+  coverageReporters: ["html", "text", "text-summary"],
   errorOnDeprecated: true,
   logHeapUsage: true,
   maxWorkers: "100%",

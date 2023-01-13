@@ -1,11 +1,11 @@
 import { logger } from "@lib/logger";
-import { createApp } from "@src/app";
+import { app } from "@src/app";
 import { config } from "@src/config";
 
 /**
  * Start the web app.
  */
-const server = createApp().listen(config.port, () =>
+const server = app.listen(config.port, () =>
   logger.info(`✔ Server running on port ${config.port} 🍺`)
 );
 
