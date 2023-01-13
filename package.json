@@ -76,14 +76,5 @@
     "koa-morgan": "1.0.1",
     "koa-router": "12.0.0",
     "winston": "3.8.2"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "tsc"
-    ],
-    "*.{json,md,prettierrc,eslintrc}": [
-      "prettier --write"
-    ]
   }
 }
