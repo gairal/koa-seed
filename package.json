@@ -2,7 +2,7 @@
   "name": "koa-seed",
   "version": "0.0.1",
   "description": "Koa Seed",
-  "main": "bin/server.ts",
+  "main": "dist",
   "private": true,
   "engines": {
     "node": ">=18"
@@ -15,7 +15,7 @@
     "dev": "NODE_ENV=development nodemon",
     "lint": "eslint ./src/**/*.ts",
     "prepare": "husky install",
-    "start": "yarn run dev",
+    "start": "yarn node dist",
     "test": "NODE_ENV=test jest",
     "typecheck": "tsc"
   },

@@ -5,12 +5,6 @@
     "esModuleInterop": true,
     "lib": ["ESNext"],
     "noEmit": true,
-    "paths": {
-      "@api/*": ["src/api/*"],
-      "@lib/*": ["src/lib/*"],
-      "@src/*": ["src/*"],
-      "@test/*": ["test/*"]
-    },
     "resolveJsonModule": true,
     "sourceMap": true
   },

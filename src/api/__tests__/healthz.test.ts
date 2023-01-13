@@ -1,6 +1,6 @@
 import request from "supertest";
 
-import { server } from "@test/utils";
+import { server } from "../../../test/utils";
 
 describe("health check", () => {
   it("returns 404 when app is alive but route does not exists", async () => {

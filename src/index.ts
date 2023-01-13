@@ -1,6 +1,5 @@
-import { logger } from "@lib/logger";
-import { app } from "@src/app";
-import { config } from "@src/config";
+import { app } from "./app";
+import { config, logger } from "./lib";
 
 /**
  * Start the web app.

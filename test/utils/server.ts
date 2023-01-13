@@ -1,6 +1,6 @@
 import { Server } from "http";
 
-import { app } from "@src/app";
+import { app } from "../../src/app";
 
 // eslint-disable-next-line import/no-mutable-exports
 export let server: Server;
