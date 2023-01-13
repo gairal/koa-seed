@@ -5,7 +5,7 @@ import bodyParser from "koa-bodyparser";
 
 import { healthz } from "./api";
 
-export const createApp = () => {
+const createApp = () => {
   const app = new Koa();
 
   app.use(cors());
@@ -17,3 +17,5 @@ export const createApp = () => {
 
   return app;
 };
+
+export const app = createApp();
