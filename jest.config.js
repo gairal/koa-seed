@@ -5,7 +5,7 @@ module.exports = {
   coverageReporters: ["html", "text-summary"],
   errorOnDeprecated: true,
   logHeapUsage: true,
-  maxWorkers: "100%",
+  maxWorkers: "1",
   moduleFileExtensions: ["ts", "js", "json"],
   moduleNameMapper: {
     "^@api/(.*)$": "<rootDir>/src/api/$1",
