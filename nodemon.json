@@ -3,5 +3,5 @@
     "src"
   ],
   "ext": "ts, json",
-  "exec": "yarn ts --inspect=0.0.0.0:9220 ."
+  "exec": "node --inspect -r ts-node/register src"
 }

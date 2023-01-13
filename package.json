@@ -11,11 +11,11 @@
     "test": "test"
   },
   "scripts": {
-    "build": "rm -f ./dist && tsc -p tsconfig.build.json",
+    "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
     "dev": "NODE_ENV=development nodemon",
     "lint": "eslint ./src/**/*.ts",
     "prepare": "husky install",
-    "start": "yarn node dist",
+    "start": "yarn node ./dist/index.js",
     "test": "NODE_ENV=test jest",
     "typecheck": "tsc"
   },

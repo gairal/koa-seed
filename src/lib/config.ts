@@ -1,6 +1,6 @@
 const {
   APP_NAME = "koa-seed",
-  LOG_LEVEL = "error",
+  LOG_LEVEL = "info",
   NODE_ENV = "development",
 } = process.env;
 

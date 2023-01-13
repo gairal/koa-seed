@@ -4,9 +4,9 @@ import { config, logger } from "./lib";
 /**
  * Start the web app.
  */
-const server = app.listen(config.port, () =>
-  logger.info(`✔ Server running on port ${config.port} 🍺`)
-);
+const server = app.listen(config.port, () => {
+  logger.info(`✔ Server running on port ${config.port} 🍺`);
+});
 
 /**
  * Catch EACCES & EADDRINUSE errors
