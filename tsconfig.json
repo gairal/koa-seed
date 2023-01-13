@@ -1,0 +1,19 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "lib": ["ESNext"],
+    "noEmit": true,
+    "paths": {
+      "@api/*": ["src/api/*"],
+      "@lib/*": ["src/lib/*"],
+      "@src/*": ["src/*"],
+      "@test/*": ["test/*"]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src", "test", "__mocks__"],
+  "exclude": ["node_modules", "dist", "/*.js"]
+}
