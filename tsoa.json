@@ -1,12 +1,13 @@
 {
+  "controllerPathGlobs": ["src/api/**/*Controller.ts"],
   "entryFile": "src/app.ts",
   "noImplicitAdditionalProperties": "throw-on-extras",
-  "controllerPathGlobs": ["src/**/*Controller.ts"],
+  "routes": {
+    "middleware": "koa",
+    "routesDir": "."
+  },
   "spec": {
     "outputDirectory": "dist",
     "specVersion": 3
-  },
-  "routes": {
-    "routesDir": "build"
   }
 }

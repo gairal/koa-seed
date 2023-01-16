@@ -3,7 +3,7 @@ import cors from "@koa/cors";
 import compress from "koa-compress";
 import bodyParser from "koa-bodyparser";
 
-import { healthz } from "./api";
+import { RegisterRoutes } from "../routes";
 
 const createApp = () => {
   const app = new Koa();
@@ -13,7 +13,7 @@ const createApp = () => {
   app.use(bodyParser());
 
   // Routing
-  app.use(healthz);
+  RegisterRoutes(app);
 
   return app;
 };
