@@ -11,12 +11,12 @@
     "test": "test"
   },
   "scripts": {
-    "build": "rm -rf dist && tsoa spec-and-routes && tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "dev": "NODE_ENV=development nodemon",
     "lint": "eslint ./src/**/*.ts",
     "prepare": "husky install",
     "start": "yarn node ./dist/index.js",
-    "test": "tsoa routes && NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest",
     "typecheck": "tsc"
   },
   "repository": {
@@ -76,7 +76,6 @@
     "koa-morgan": "1.0.1",
     "koa-router": "12.0.0",
     "modern-errors": "^5.5.0",
-    "tsoa": "^5.0.0",
     "winston": "3.8.2"
   }
 }
