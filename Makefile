@@ -5,7 +5,7 @@ install:
 
 test:
 	pnpm lint
-	pnpm test
+	pnpm t
 
 build:
 	make install
