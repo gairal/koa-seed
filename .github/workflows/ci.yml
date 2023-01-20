@@ -23,6 +23,8 @@ jobs:
           node-version-file: '.nvmrc'
 
       - uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - run: pnpm build
       - run: pnpm lint
