@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   bail: true,
   collectCoverage: true,
   coverageReporters: ["html", "text", "text-summary"],

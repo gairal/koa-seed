@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // Using fake extensions is a trick to run tasks concurrently.
   // See https://github.com/okonet/lint-staged/issues/934
   // Run type-check to all TypeScript files

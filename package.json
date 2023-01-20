@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Koa Seed",
   "main": "dist",
+  "type": "module",
   "private": true,
   "engines": {
     "node": ">=18"
