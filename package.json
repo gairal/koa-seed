@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Koa Seed",
   "main": "dist",
+  "type": "module",
   "private": true,
   "engines": {
     "node": ">=18"
@@ -15,7 +16,7 @@
     "dev": "NODE_ENV=development nodemon",
     "lint": "eslint ./src/**/*.ts",
     "prepare": "husky install",
-    "start": "yarn node ./dist/index.js",
+    "start": "node ./dist/index.js",
     "test": "tsoa routes && NODE_ENV=test jest",
     "typecheck": "tsc"
   },
