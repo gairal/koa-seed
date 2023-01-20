@@ -45,5 +45,5 @@ pnpm start
 - `pnpm clean`: Deletes build dir ./dist
 - `pnpm dev`: launches a TypeScript watcher
 - `pnpm lint`: lints the whole sources and tests with eslint
-- `pnpm t`: runs Jest
+- `pnpm test`: runs Jest
 - `pnpm start`: runs the project in production mode
