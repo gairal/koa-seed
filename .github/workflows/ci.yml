@@ -21,16 +21,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+      - uses: pnpm/action-setup@v2
 
-      - name: Build
-        run: pnpm build
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Test
-        run: pnpm test --ci
+      - run: pnpm build
+      - run: pnpm lint
+      - run: pnpm test --ci
