@@ -1,0 +1,101 @@
+name: Trivy Code Scan analysis
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  contents: read
+  packages: read
+  pull-requests: write
+  issues: write
+
+
+jobs:
+  trivy:
+    runs-on: ubuntu-latest
+    outputs:
+      trivy: ${{ steps.trivy.outputs.trivy-results }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Trivy to generate report
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          security-checks: 'vuln,secret,config'
+          ignore-unfixed: true
+          format: 'json'
+          output: 'trivy-results.json'
+          severity: 'CRITICAL'
+
+      - name: Run Trivy in fs sarif mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          security-checks: 'vuln,secret,config'
+          ignore-unfixed: true
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL'
+
+      - shell: bash
+        run: |
+          cat trivy-results.json
+          echo log sarif file
+          cat trivy-results.sarif
+
+      - name: Check for new Vulnerabilities
+        run: |
+          set -eo pipefail
+          vulnCount=$(jq '[ .Results[].Vulnerabilities ] | length' trivy-results.json)
+          summary="🔍 Trivy scan has found $vulnCount new vulnerabilities. Check the details in the [scan report](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})"
+          if [[ $vulnCount -eq 0 ]];
+          then
+            summary="🎉 Trivy Scan has not found any new Security Issues"
+          else
+            body=$(cat trivy-results.sarif | jq -c '.runs[0].results')
+          fi
+          echo "SUMMARY=$summary" >> $GITHUB_ENV
+          echo "BODY=$body" >> "$GITHUB_ENV"
+      - uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const trivyResults = JSON.parse(process.env.BODY)
+            let output = `#### Trivy report is ready 🖌
+            #### ${{ env.SUMMARY }}
+            <details><summary>Show Issues Summary 📖</summary>
+            <table>
+            <tr>
+            <th>RuleId</th>
+            <th>Level</th>
+            <th>Description</th>
+            </tr>
+            `;
+            for (let result of trivyResults) {
+            output += `<tr>
+            <td>${result.ruleId}</td>
+            <td>${result.level}</td>
+            <td>${result.message.text}</td>
+            </tr>
+            `;
+            }
+            output += `</table>
+            </details>
+            <br>
+            <i>Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`</i>`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
