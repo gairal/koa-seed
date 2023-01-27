@@ -52,19 +52,6 @@ jobs:
           echo log sarif file
           cat trivy-results.sarif
 
-      - name: Check for new Vulnerabilities
-        run: |
-          set -eo pipefail
-          vulnCount=$(jq '[ .Results[].Vulnerabilities ] | length' trivy-results.json)
-          summary="🔍 Trivy scan has found $vulnCount new vulnerabilities. Check the details in the [scan report](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})"
-          if [[ $vulnCount -eq 0 ]];
-          then
-            summary="🎉 Trivy Scan has not found any new Security Issues"
-          else
-            body=$(cat trivy-results.sarif | jq -c '.runs[0].results')
-          fi
-          echo "SUMMARY=$summary" >> $GITHUB_ENV
-          echo "BODY=$body" >> "$GITHUB_ENV"
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
