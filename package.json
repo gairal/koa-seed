@@ -76,6 +76,7 @@
     "koa-bodyparser": "4.3.0",
     "koa-compress": "5.1.0",
     "koa-morgan": "1.0.1",
+    "modern-errors": "^5.5.0",
     "winston": "3.8.2"
   }
 }
