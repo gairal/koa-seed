@@ -1,13 +1,13 @@
-import Router from "@koa/router";
+import Router from '@koa/router';
 
-import { HealthzError } from "./errors";
+import { HealthzError } from './errors';
 
 const router = new Router();
 
-router.get("/healthz", (ctx) => {
+router.get('/healthz', (ctx) => {
   ctx.status = 200;
 
-  throw new HealthzError("test");
+  throw new HealthzError('test');
 });
 
 export const healthz = router.routes();

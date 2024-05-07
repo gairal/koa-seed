@@ -1,26 +1,26 @@
-import request from "supertest";
+import request from 'supertest';
 
-import { server } from "../../../test/utils";
+import { server } from '../../../test/utils';
 
-describe("health check", () => {
-  it("returns 404 when app is alive but route does not exists", async () => {
-    const response = await request(server).get("/pong");
+describe('health check', () => {
+  it('returns 404 when app is alive but route does not exists', async () => {
+    const response = await request(server).get('/pong');
 
     expect(response.status).toBe(404);
   });
 
-  it("returns 200 when app is alive", async () => {
-    const response = await request(server).get("/healthz");
+  it('returns 200 when app is alive', async () => {
+    const response = await request(server).get('/healthz');
 
     expect(response.status).toBe(200);
   });
 
-  it("throws", async () => {
+  it('throws', async () => {
     try {
-      await request(server).get("/healthz");
+      await request(server).get('/healthz');
       expect(true).toBeFalsy();
     } catch (err) {
-      expect((err as Error).toString()).toBe("");
+      expect((err as Error).toString()).toBe('');
     }
   });
 });

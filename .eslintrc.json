@@ -1,8 +1,11 @@
 {
   "extends": [
-    "airbnb-typescript-prettier",
+    "airbnb-typescript/base",
     "plugin:typescript-sort-keys/recommended"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": [
     "import",
     "no-only-tests",
