@@ -14,4 +14,13 @@ describe("health check", () => {
 
     expect(response.status).toBe(200);
   });
+
+  it("throws", async () => {
+    try {
+      await request(server).get("/healthz");
+      expect(true).toBeFalsy();
+    } catch (err) {
+      expect((err as Error).toString()).toBe("");
+    }
+  });
 });
