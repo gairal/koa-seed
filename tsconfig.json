@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "esModuleInterop": true,
     "lib": ["ESNext"],
+    "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
     "sourceMap": true

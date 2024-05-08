@@ -26,6 +26,7 @@
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
     "import/extensions": [
       "error",
       "ignorePackages",
