@@ -1,7 +1,7 @@
 # koa-seed &middot; [![CI Status](https://github.com/gairal/koa-seed/workflows/CI/badge.svg)](https://github.com/gairal/koa-seed/actions)
 
 > A Koa Seed [TypeScript](https://www.typescriptlang.org/),
-> [Jest](https://jestjs.io/), [Prettier](https://prettier.io/), [eslint](https://eslint.org/) and ❤️
+> [Vitest](https://vitest.dev), [Prettier](https://prettier.io/), [eslint](https://eslint.org/) and ❤️
 
 ### Table of Contents
 
@@ -45,5 +45,5 @@ pnpm start
 - `pnpm clean`: Deletes build dir ./dist
 - `pnpm dev`: launches a TypeScript watcher
 - `pnpm lint`: lints the whole sources and tests with eslint
-- `pnpm test`: runs Jest
+- `pnpm test`: runs Vitest
 - `pnpm start`: runs the project in production mode

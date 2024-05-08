@@ -1,10 +1,11 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
     "esModuleInterop": true,
     "lib": ["ESNext"],
-    "module": "Node16",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "noEmit": true,
     "resolveJsonModule": true,
     "sourceMap": true

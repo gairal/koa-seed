@@ -1,8 +1,11 @@
 {
   "extends": [
-    "airbnb-typescript-prettier",
+    "airbnb-typescript/base",
     "plugin:typescript-sort-keys/recommended"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": [
     "import",
     "no-only-tests",
@@ -23,6 +26,7 @@
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
     "import/extensions": [
       "error",
       "ignorePackages",
