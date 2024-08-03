@@ -1,7 +1,7 @@
 # koa-seed &middot; [![CI Status](https://github.com/gairal/koa-seed/workflows/CI/badge.svg)](https://github.com/gairal/koa-seed/actions)
 
 > A Koa Seed [TypeScript](https://www.typescriptlang.org/),
-> [Vitest](https://vitest.dev), [Prettier](https://prettier.io/), [eslint](https://eslint.org/) and ❤️
+> [Vitest](https://vitest.dev), [bun](https://bun.sh/), [biome](https://biomejs.dev/) and ❤️
 
 ### Table of Contents
 
