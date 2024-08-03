@@ -1,6 +1,7 @@
-import { Server } from 'http';
+import type { Server } from "node:http";
 
-import { app } from '../../src/app';
+import { afterAll, beforeAll } from "vitest";
+import { app } from "../../src/app";
 
 // eslint-disable-next-line import/no-mutable-exports
 export let server: Server;

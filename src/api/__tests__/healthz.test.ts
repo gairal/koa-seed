@@ -1,5 +1,6 @@
 import request from "supertest";
 
+import { describe, expect, it } from "vitest";
 import { server } from "../../../test/utils";
 
 describe("health check", () => {

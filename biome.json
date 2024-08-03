@@ -32,7 +32,12 @@
       }
     }
   },
-  "javascript": {
-    "globals": ["fetchMock"]
-  }
+  "overrides": [
+    {
+      "include": ["lint-staged.config.js"],
+      "linter": {
+        "rules": { "style": { "useFilenamingConvention": "off" } }
+      }
+    }
+  ]
 }
