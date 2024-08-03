@@ -8,7 +8,8 @@
     "moduleResolution": "Node",
     "noEmit": true,
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src", "test", "__mocks__"],
   "exclude": ["node_modules", "dist", "/*.js"]

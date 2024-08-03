@@ -32,6 +32,9 @@
       }
     }
   },
+  "javascript": {
+    "globals": ["afterAll", "beforeAll", "describe", "expect", "it"]
+  },
   "overrides": [
     {
       "include": ["lint-staged.config.js"],
