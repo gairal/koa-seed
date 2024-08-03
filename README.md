@@ -42,7 +42,6 @@ bun start
 ### Commands
 
 - `bun run build`: Production build generated into ./dist
-- `bun clean`: Deletes build dir ./dist
 - `bun dev`: launches a TypeScript watcher
 - `bun lint`: lints the whole sources and tests with eslint
 - `bun run test`: runs Vitest
