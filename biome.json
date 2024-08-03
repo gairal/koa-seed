@@ -16,20 +16,10 @@
       "correctness": { "noNodejsModules": "off" },
       "nursery": {
         "all": true,
-        "noUndeclaredDependencies": "off",
-        "noExportedImports": "off",
         "useImportExtensions": "off",
         "useImportRestrictions": "off"
       },
-      "performance": { "noBarrelFile": "off", "noReExportAll": "off" },
-      "style": {
-        "useFilenamingConvention": {
-          "level": "error",
-          "options": {
-            "filenameCases": ["PascalCase", "camelCase"]
-          }
-        }
-      }
+      "performance": { "noBarrelFile": "off", "noReExportAll": "off" }
     }
   },
   "javascript": {
