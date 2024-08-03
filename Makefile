@@ -1,15 +1,15 @@
 .PHONY: install test build release start debug deploy
 
 install:
-	pnpm i
+	bun i
 
 test:
-	pnpm lint
-	pnpm test
+	bun lint
+	bun run test
 
 build:
-	make install
-	pnpm build
+	bun i
+	bun run build
 
 start:
-	pnpm start
+	bun start

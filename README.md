@@ -33,17 +33,16 @@ git clone git@github.com:gairal/koa-seed.git
 cd koa-seed
 
 # install the dependencies
-pnpm i
+bun i
 
 # start the TypeScript watcher
-pnpm start
+bun start
 ```
 
 ### Commands
 
-- `pnpm build`: Production build generated into ./dist
-- `pnpm clean`: Deletes build dir ./dist
-- `pnpm dev`: launches a TypeScript watcher
-- `pnpm lint`: lints the whole sources and tests with eslint
-- `pnpm test`: runs Vitest
-- `pnpm start`: runs the project in production mode
+- `bun run build`: Production build generated into ./dist
+- `bun dev`: launches a TypeScript watcher
+- `bun lint`: lints the whole sources and tests with eslint
+- `bun run test`: runs Vitest
+- `bun start`: runs the project in production mode
