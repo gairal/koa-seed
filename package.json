@@ -18,7 +18,7 @@
     "prepare": "husky",
     "start": "bun run ./dist/index.js",
     "test": "NODE_ENV=test vitest run",
-    "typecheck": "tsc"
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
