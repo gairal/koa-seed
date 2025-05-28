@@ -45,7 +45,7 @@
     "@types/koa__router": "^12.0.4",
     "@types/supertest": "^6.0.2",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^16.1.0",
     "supertest": "^7.0.0",
     "typescript": "^5.5.4",
     "vitest": "^3.0.1"
